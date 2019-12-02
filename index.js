@@ -17,6 +17,7 @@ class Polygon {
 class Triangle extends Polygon {
   get isValid() {
     return (
+      (this.countSides === 3) &&
       ((this.sideArr[0] + this.sideArr[1]) > this.sideArr[2]) &&
       ((this.sideArr[1] + this.sideArr[2]) > this.sideArr[0]) && 
       ((this.sideArr[2] + this.sideArr[0]) > this.sideArr[1])
@@ -26,9 +27,12 @@ class Triangle extends Polygon {
 
 class Square extends Polygon {
   get isValid() {
-    return this.sideArr.every( side => side === this.sideArr[0])
+    return (
+      (this.countSides === 4) &&
+      (this.sideArr.every( side => side === this.sideArr[0]))
+    )
   }
-  
+
   get area() {
     return this.sideArr[0] ** 2
   }
