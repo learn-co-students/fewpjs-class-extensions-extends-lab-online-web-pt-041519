@@ -22,7 +22,7 @@ class Triangle extends Polygon {
     }
 
     get isValid() {
-        return (this.countSides === 3 &&
+        return (super.countSides === 3 &&
                 this.sides[0] + this.sides[1] > this.sides[2] && 
                 this.sides[0] + this.sides[2] > this.sides[1] && 
                 this.sides[1] + this.sides[2] > this.sides[0]) ? true : false
